@@ -17,5 +17,8 @@
 	<bean id="kenny2" class="spring.pag046.Instrumentalist">
 		<property name="song" value="Jingle Bells"/>
 		<property name="age" value="20"/>
+		<property name="instrument" ref="piano"/>
 	</bean>
+	<bean id="saxophone" class="spring.pag046.Saxophone"></bean>
+	<bean id="piano" class="spring.pag046.Piano"></bean>
 </beans>

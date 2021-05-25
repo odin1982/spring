@@ -12,7 +12,7 @@ public class Instrumentalist implements Performer{
 
 	@Override
 	public void perform() throws PerformanceException {
-		System.out.println("Playing : " + song + "with age: " + age);
+		System.out.println("Playing : " + song + "with age: " + age + " and the sound is: " +instrument.play());
 	}
 
 	public void setSong(String song) {

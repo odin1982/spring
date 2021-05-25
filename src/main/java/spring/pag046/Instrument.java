@@ -1,5 +1,5 @@
 package spring.pag046;
 
 public interface Instrument {
-	void play();
+	String play();
 }
