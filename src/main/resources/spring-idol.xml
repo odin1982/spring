@@ -5,4 +5,11 @@
 	<bean id="duke" class="spring.pag040.Juggler">
 		<constructor-arg value="15"></constructor-arg>
 	</bean>
+	
+	<bean id="sonnet29" class="spring.pag043.Sonnet29"/>
+	
+	<bean id="duke2" class="spring.pag043.PoeticJuggler">
+		<constructor-arg value="30" />
+		<constructor-arg ref="sonnet29"/>
+	</bean> 
 </beans>
