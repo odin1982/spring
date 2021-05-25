@@ -4,6 +4,8 @@ import spring.pag040.PerformanceException;
 import spring.pag040.Performer;
 
 public class Instrumentalist implements Performer{
+	private String song;
+	private Instrument instrument;
 	
 	
 	public Instrumentalist() {}
@@ -13,4 +15,12 @@ public class Instrumentalist implements Performer{
 		System.out.println("Playing "+ song + " : ");
 	}
 
+	public void setSong(String song) {
+		this.song = song;
+	}
+
+	public void setInstrument(Instrument instrument) {
+		this.instrument = instrument;
+	}
+	
 }

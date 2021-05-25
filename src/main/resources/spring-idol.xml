@@ -11,5 +11,7 @@
 	<bean id="duke2" class="spring.pag043.PoeticJuggler">
 		<constructor-arg value="30" />
 		<constructor-arg ref="sonnet29"/>
-	</bean> 
+	</bean>
+	
+	<bean id="kenny" class"spring.pag046.Instrumentalist"/>
 </beans>
