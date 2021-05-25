@@ -13,5 +13,9 @@
 		<constructor-arg ref="sonnet29"/>
 	</bean>
 	
-	<bean id="kenny" class"spring.pag046.Instrumentalist"/>
+	<bean id="kenny" class="spring.pag046.Instrumentalist"/>
+	<bean id="kenny2" class="spring.pag046.Instrumentalist">
+		<property name="song" value="Jingle Bells"/>
+		<property name="age" value="20"/>
+	</bean>
 </beans>
