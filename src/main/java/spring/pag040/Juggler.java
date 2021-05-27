@@ -1,5 +1,5 @@
 package spring.pag040;
-
+//juggler - malabarista
 public class Juggler implements Performer{
 	private int beanBags = 3;
 	

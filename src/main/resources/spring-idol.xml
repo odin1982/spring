@@ -2,23 +2,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
-	<bean id="duke" class="spring.pag040.Juggler">
-		<constructor-arg value="15"></constructor-arg>
-	</bean>
-	
-	<bean id="sonnet29" class="spring.pag043.Sonnet29"/>
-	
-	<bean id="duke2" class="spring.pag043.PoeticJuggler">
-		<constructor-arg value="30" />
-		<constructor-arg ref="sonnet29"/>
-	</bean>
-	
-	<bean id="kenny" class="spring.pag046.Instrumentalist"/>
-	<bean id="kenny2" class="spring.pag046.Instrumentalist">
-		<property name="song" value="Jingle Bells"/>
-		<property name="age" value="20"/>
-		<property name="instrument" ref="piano"/>
-	</bean>
-	<bean id="saxophone" class="spring.pag046.Saxophone"></bean>
-	<bean id="piano" class="spring.pag046.Piano"></bean>
+	<!-- Juggler using default constructor -->
+	<bean id="odin" class="spring.pag040.Juggler"></bean>
 </beans>
