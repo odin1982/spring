@@ -1,4 +1,4 @@
-package spring.pag043;
+package spring.pag040;
 
 public class Sonnet29 implements Poem{
 	private static String[] LINES = {"uno","dos","tres"};

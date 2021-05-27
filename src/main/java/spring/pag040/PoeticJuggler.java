@@ -15,7 +15,7 @@ public class PoeticJuggler extends Juggler {
 
 	public void perform() throws PerformanceException {
 		super.perform();
-		System.out.println("WHILE RECITING...");
+		System.out.println("while reciting...");
 		poem.recite();
 	}
 }

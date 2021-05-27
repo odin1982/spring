@@ -14,6 +14,9 @@ public class Test {
 		
 		Performer sandra = (Performer)ctx.getBean("sandra");
 		sandra.perform();
+		
+		Performer amaya = (Performer)ctx.getBean("amaya");
+		amaya.perform();
 	}
 
 }
