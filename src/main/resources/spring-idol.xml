@@ -4,4 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 	<!-- Juggler using default constructor -->
 	<bean id="odin" class="spring.pag040.Juggler"></bean>
+	
+	<bean id="sandra" class="spring.pag040.Juggler">
+		<constructor-arg  value="15"></constructor-arg>
+	</bean>
+	
 </beans>
