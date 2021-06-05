@@ -17,4 +17,16 @@
 		<constructor-arg value="15"></constructor-arg>
 		<constructor-arg ref="sonetoChafa"></constructor-arg>
 	</bean>
+	
+	<bean id="saxophone" class="spring.pag049.Saxophone"></bean>
+	<bean id="piano" class="spring.pag050.Piano"></bean>
+	
+	<bean id="kenny" class="spring.pag046.Instrumentalist">
+		<property name="song" value="Jingle Bells"></property>
+		<property name="age" value="20"></property>
+		<!-- kenny can play any instrument -->
+<!-- 		<property name="instrument" ref="saxophone"></property> -->
+		<property name="instrument" ref="piano"></property>
+	</bean>
+
 </beans>
