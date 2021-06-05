@@ -1,4 +1,6 @@
-package spring.pag046;
+package spring.pag049;
+
+import spring.pag046.Instrument;
 
 public class Saxophone implements Instrument{
 	public Saxophone() {}
