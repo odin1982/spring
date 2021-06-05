@@ -11,6 +11,9 @@ public class Test {
 		ApplicationContext ctx = new FileSystemXmlApplicationContext("/src/main/resources/spring-idol.xml");
 		Performer kenny = (Performer)ctx.getBean("kenny");
 		kenny.perform();
+		
+		Performer duke = (Performer)ctx.getBean("duke");
+		duke.perform();
 	}
 
 }
