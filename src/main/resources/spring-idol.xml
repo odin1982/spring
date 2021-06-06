@@ -36,12 +36,30 @@
 			<bean class="spring.pag049.Saxophone" />
 		</property>
 	</bean>
-	
-	<bean id="duke"
-		class="spring.pag040.PoeticJuggler">
+
+	<bean id="duke" class="spring.pag040.PoeticJuggler">
 		<constructor-arg value="15" />
 		<constructor-arg>
 			<bean class="spring.pag040.Sonnet29" />
 		</constructor-arg>
+	</bean>
+	<!-- wiring collections -->
+	<bean id="hank" class="spring.pag053.OneManBand">
+		<property name="instruments">
+			<list>
+				<ref bean="piano" />
+				<ref bean="saxophone" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- wiring collections set -->
+	<bean id="rose" class="spring.pag053.OneManBand">
+		<property name="instruments">
+			<set>
+				<ref bean="piano" />
+				<ref bean="saxophone" />
+			</set>
+		</property>
 	</bean>
 </beans>
