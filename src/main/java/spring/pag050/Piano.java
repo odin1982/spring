@@ -6,6 +6,7 @@ public class Piano implements Instrument{
 
 	@Override
 	public String play() {
+		System.out.println("plink plink plink");
 		return "plink plink plink";
 	}
 

@@ -62,4 +62,14 @@
 			</set>
 		</property>
 	</bean>
+	
+	<!-- wiring collections map -->
+	<bean id="frank" class="spring.pag055.OneManBand">
+		<property name="instruments">
+			<map>
+				<entry key="PIANO" value-ref="piano"></entry>
+				<entry key="SAXOPHONE" value-ref="saxophone"></entry>
+			</map>
+		</property>
+	</bean>
 </beans>
