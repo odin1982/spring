@@ -4,3 +4,4 @@ Injecting object references with constructors
 referencing other beans
 wiring collection maps
 wiring collection properties
+Creating beans from factory methods
