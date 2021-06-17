@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- autowire byName -->
+	<bean id="b" class="spring.tutorials.autowiring.byName._01.B"></bean>
+	<!-- if you change the name to b1 it would be an error -->
+	<!-- <bean id="b1" class="spring.tutorials.autowiring.byName._01.B"></bean> -->
+	<bean id="a" class="spring.tutorials.autowiring.byName._01.A" autowire="byName"></bean>
+	
+</beans>

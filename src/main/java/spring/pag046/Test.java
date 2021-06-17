@@ -9,10 +9,7 @@ import spring.pag040.Performer;
 public class Test {
 	public static void main(String[] args) throws PerformanceException {
 		ApplicationContext ctx = new FileSystemXmlApplicationContext("/src/main/resources/spring-idol.xml");
-		Instrumentalist bean = (Instrumentalist)ctx.getBean("kenny2");
+		Performer bean = (Performer)ctx.getBean("kenny");
 		bean.perform();
-		
-		Performer performer =(Performer)ctx.getBean("kenny2");
-		performer.perform();
 	}
 }
