@@ -5,3 +5,5 @@ referencing other beans
 wiring collection maps
 wiring collection properties
 Creating beans from factory methods
+
+https://www.javatpoint.com/autowiring-in-spring
