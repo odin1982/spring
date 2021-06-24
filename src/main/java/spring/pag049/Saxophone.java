@@ -11,4 +11,14 @@ public class Saxophone implements Instrument{
 		return "toot toot toot";
 	}
 
+	@Override
+	public void tune() {
+		System.out.println("saxophone tune");
+	}
+
+	@Override
+	public void clean() {
+		System.out.println("saxophone clean");
+	}
+
 }

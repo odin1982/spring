@@ -17,4 +17,10 @@
 	
 	
 	<bean id="theStage" class="spring.pag067.Stage" factory-method="getInstance"></bean>
+	
+	<bean id="saxophone" class="spring.pag049.Saxophone"></bean>
+	<bean id="kenny" class="spring.pag068.Instrumentalist" init-method="tuneInstrument" destroy-method="cleanInstrument">
+		<property name="song" value="Jingle Bells" />
+		<property name="instrument" ref="saxophone" />
+	</bean>
 </beans>

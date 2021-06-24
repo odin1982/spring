@@ -7,4 +7,15 @@ public class Piano implements Instrument{
 		return "plink plink plink";
 	}
 
+	@Override
+	public void tune() {
+		System.out.println("tune piano");
+		
+	}
+
+	@Override
+	public void clean() {
+		System.out.println("clean piano");
+	}
+
 }
