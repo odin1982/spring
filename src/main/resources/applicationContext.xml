@@ -14,4 +14,7 @@
 	<!-- But, if you have multiple bean of one type, it will not work and throw exception. -->
 	<!-- <bean id="b2" class="spring.tutorials.autowiring.byName._01.B"></bean> -->
 	<bean id="a" class="spring.tutorials.autowiring.byName._01.A" autowire="byType"></bean>
+	
+	
+	<bean id="theStage" class="spring.pag067.Stage" factory-method="getInstance"></bean>
 </beans>
