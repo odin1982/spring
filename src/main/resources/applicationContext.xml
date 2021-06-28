@@ -10,17 +10,51 @@
 	<!-- <bean id="a" class="spring.tutorials.autowiring.byName._01.A" autowire="byName"></bean> -->
 	
 	<!-- autowire byType -->
-	<bean id="b1" class="spring.tutorials.autowiring.byName._01.B"></bean>
+<!-- 	<bean id="b1" class="spring.tutorials.autowiring.byName._01.B"></bean> -->
 	<!-- But, if you have multiple bean of one type, it will not work and throw exception. -->
 	<!-- <bean id="b2" class="spring.tutorials.autowiring.byName._01.B"></bean> -->
-	<bean id="a" class="spring.tutorials.autowiring.byName._01.A" autowire="byType"></bean>
+<!-- 	<bean id="a" class="spring.tutorials.autowiring.byName._01.A" autowire="byType"></bean> -->
 	
 	
-	<bean id="theStage" class="spring.pag067.Stage" factory-method="getInstance"></bean>
+<!-- 	<bean id="theStage" class="spring.pag067.Stage" factory-method="getInstance"></bean> -->
 	
+<!-- 	<bean id="saxophone" class="spring.pag049.Saxophone"></bean> -->
+<!-- 	<bean id="kenny" class="spring.pag068.Instrumentalist" init-method="tuneInstrument" destroy-method="cleanInstrument"> -->
+<!-- 		<property name="song" value="Jingle Bells" /> -->
+<!-- 		<property name="instrument" ref="saxophone" /> -->
+<!-- 	</bean> -->
+	
+	<!-- 3.1.1 Abstracting a base bean type -->
 	<bean id="saxophone" class="spring.pag049.Saxophone"></bean>
-	<bean id="kenny" class="spring.pag068.Instrumentalist" init-method="tuneInstrument" destroy-method="cleanInstrument">
-		<property name="song" value="Jingle Bells" />
-		<property name="instrument" ref="saxophone" />
+	
+	<bean id="kenny" class="spring.pag068.Instrumentalist">
+		<property name="song" value="Jingle Bells"></property>
+		<property name="age" value="39"></property>
+		<property name="instrument" ref="saxophone"></property>
 	</bean>
+	
+	<bean id="david" class="spring.pag068.Instrumentalist">
+		<property name="song" value="Jingle Bells"></property>
+		<property name="age" value="39"></property>
+		<property name="instrument" ref="saxophone"></property>
+	</bean>
+	<!-- Solution -->
+	<bean id="baseSaxophonist" class="spring.pag068.Instrumentalist" abstract="true">
+		<property name="instrument" ref="saxophone" />
+		<property name="song" value="Jingle Bells" />
+		<property name="age" value="0"></property>
+	</bean>
+	<!-- the redundant is gone -->
+	<bean id="pablo" parent="baseSaxophonist">
+	</bean>
+	<bean id="pedro" parent="baseSaxophonist">
+	</bean>		
+	
+	<!-- Overriding inhereting properties -->
+	<bean id="marco" parent="baseSaxophonist">
+		<property name="song" value="El triste" />
+		<property name="age" value="20"></property>
+	</bean>
+	
+	
 </beans>
