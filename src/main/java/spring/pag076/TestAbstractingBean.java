@@ -16,5 +16,8 @@ public class TestAbstractingBean {
 		
 		Instrumentalist marco = (Instrumentalist)context.getBean("marco");
 		marco.perform();
+		
+		Instrumentalist stevie = (Instrumentalist)context.getBean("stevie");
+		stevie.perform();
 	}
 }
