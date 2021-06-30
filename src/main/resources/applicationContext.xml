@@ -66,5 +66,25 @@
 		<property name="instrument" ref="guitar"></property>
 	</bean>
 	
+	<!-- Basic method replacement -->
+	<!--Example 1  -->
+<!-- 	<bean id="harry" class="spring.pag080.Magician"> -->
+<!-- 		<property name="magicWords" value="A bra cadabra"></property> -->
+<!-- 		<property name="magicBox" ref="magicBox"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="magicBox" class="spring.pag080.MagicBoxImpl"></bean> -->
+	
+	<!-- Example 2 -->
+	<bean id="harry" class="spring.pag080.Magician">
+		<property name="magicWords" value="A bra cadabra"></property>
+		<property name="magicBox" ref="magicBox"></property>
+	</bean>
+	
+	<bean id="magicBox" class="spring.pag080.MagicBoxImpl">
+		<replaced-method name="getContents" replacer="tigerReplacer"/>
+	</bean>
+	<bean id="tigerReplacer" class="spring.pag083.TigerReplacer" />
+	
 	
 </beans>
