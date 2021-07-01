@@ -86,5 +86,9 @@
 	</bean>
 	<bean id="tigerReplacer" class="spring.pag083.TigerReplacer" />
 	
+	<bean id="esteban" class="spring.pag084.Instrumentalist">
+		<lookup-method name="getInstrument" bean="guitar"/>
+		<property name="song" value="Greensleeves"/>
+	</bean>
 	
 </beans>
