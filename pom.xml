@@ -5,6 +5,7 @@
 	<groupId>org.spring</groupId>
 	<artifactId>spring</artifactId>
 	<version>1.0.0</version>
+	<packaging>war</packaging><!-- se agrega para generar un war no un jar -->
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -33,4 +34,19 @@
 			<version>${spring.version}</version>
 		</dependency>
 	</dependencies>
+
+	<!-- this boilerplate code under the project XML node. It will allow Maven to generate .war files without requiring a web.xml file -->
+	<build>
+		<finalName>springwebapp</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
