@@ -91,4 +91,27 @@
 		<property name="song" value="Greensleeves"/>
 	</bean>
 	
+	
+	<bean id="infoPhone" class="spring.pag090.PhoneNumber">
+		<constructor-arg value="888"></constructor-arg>
+		<constructor-arg value="555"></constructor-arg>
+		<constructor-arg value="1212"></constructor-arg>
+	</bean>
+	<bean id="contact" class="spring.pag090.Contact">
+		<property name="phoneNumber" ref="infoPhone"/>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="spring.pag090.PhoneNumber">
+					<bean id="phoneEditor" class="spring.pag090.PhoneEditor"></bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="contact2" class="spring.pag090.Contact">
+		<property name="phoneNumber" value="888-555-1212"/>
+	</bean>
 </beans>
