@@ -33,9 +33,26 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
+		<!-- Spring jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.22</version>
+		</dependency>
+
 	</dependencies>
 
-	<!-- this boilerplate code under the project XML node. It will allow Maven to generate .war files without requiring a web.xml file -->
+
+	<!-- this boilerplate code under the project XML node. It will allow Maven 
+		to generate .war files without requiring a web.xml file -->
 	<build>
 		<finalName>springwebapp</finalName>
 		<plugins>
