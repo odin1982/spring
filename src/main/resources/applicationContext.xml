@@ -114,4 +114,11 @@
 	<bean id="contact2" class="spring.pag090.Contact">
 		<property name="phoneNumber" value="888-555-1212"/>
 	</bean>
+	
+	
+	<bean class="spring.pag093.Fuddifier"/>
+	
+	
+	
+	
 </beans>
