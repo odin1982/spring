@@ -14,7 +14,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 //APUNTES-@EnableWebMvc: This enables Spring's ability to receive and process web requests
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"org.spring.controller"})
+@ComponentScan(basePackages = {	"org.spring.controller",
+								"org.spring.service"})
 public class AppConfig {
 	@Bean(name="theSource")
 	//To force to be executed each time it's called (and return a different object dataSource() each time), use the annotation with a scope @Scope prototype
