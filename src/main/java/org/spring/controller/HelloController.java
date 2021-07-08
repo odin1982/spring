@@ -1,5 +1,8 @@
 package org.spring.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -9,10 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
-	
+
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private ApplicationContext context;
 
@@ -21,21 +24,28 @@ public class HelloController {
 	public String hi() {
 		return "Hello, world";
 	}
-	
-	
+
 	@RequestMapping("hiUsers")
 	@ResponseBody
 	public String hiUsers() {
 		return "nb of users: " + userService.findNumberOfUsers();
 	}
-	
-	//Using a bean directly
+
+	// Using a bean directly
 	@RequestMapping("bean-directly")
 	@ResponseBody
 	public String usingBeanDirectly() {
-		UserService bean = (UserService)context.getBean("userService");
-		//another way to get a bean by its class
-		//UserService bean2 = context.getBean(UserService.class);
+		UserService bean = (UserService) context.getBean("userService");
+		// another way to get a bean by its class
+		// UserService bean2 = context.getBean(UserService.class);
 		return "number of users: " + bean.findNumberOfUsers();
+	}
+
+	// Get beans defined
+	@RequestMapping("bean-defined")
+	@ResponseBody
+	public String beansDefined() {
+		List<String> beans = Arrays.asList(context.getBeanDefinitionNames());
+		return beans.toString();
 	}
 }
