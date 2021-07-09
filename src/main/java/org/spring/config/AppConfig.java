@@ -8,7 +8,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 //APUNTES-@Configuration-This declares it as a Spring configuration class
 //APUNTES-@EnableWebMvc: This enables Spring's ability to receive and process web requests
@@ -27,6 +30,15 @@ public class AppConfig {
 		dataSource.setUsername("root");
 		dataSource.setPassword("barcelona8");
 		return dataSource;
+	}
+	
+	@Bean
+	public ViewResolver jspViewResolver() {
+		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+		resolver.setViewClass(JstlView.class);
+		resolver.setPrefix("/WEB-INF/jsp/");
+		resolver.setSuffix(".jsp");
+		return resolver;
 	}
 
 }
