@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>There are many users</h1>
+<p>There are ${nbUsers} users</p>
 </body>
 </html>
