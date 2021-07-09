@@ -9,17 +9,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 	private static Logger log = Logger.getLogger(UserController.class.getName());
-	@RequestMapping("/user/list")
+	@RequestMapping("/list")
 	public String userList(Model model) {
 		model.addAttribute("nbUsers", 10);
 		return "user/list";//Ubicación de JSP
 	}
 	
-	@RequestMapping("/user/{id}/{field}")//Dynamic Parameters
+	@RequestMapping("/{id}/{field}")//Dynamic Parameters
 	public String showUserField(@PathVariable("id")Long userId, @PathVariable("field")String field) {
 		log.info("In showUserField..."+userId + " " + field);
 		return "user/list";
 	}
+	
+	
 }
