@@ -24,5 +24,17 @@ public class UserController {
 		return "user/list";
 	}
 	
+	@RequestMapping("/listTiles")
+	public String userListTiles(Model model) {
+		model.addAttribute("nbUsers", 10);
+		return "home";//Ubicación de JSP
+	}
+	
+	@RequestMapping("/listTiles2")
+	public String userListTiles2(Model model) {
+		model.addAttribute("nbUsers", 10);
+		return "user/add";//Ubicación de JSP
+	}
+	
 	
 }
