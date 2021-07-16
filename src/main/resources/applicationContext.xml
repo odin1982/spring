@@ -118,7 +118,9 @@
 	
 	<bean class="spring.pag093.Fuddifier"/>
 	
-	
+	<bean id="bugs" class="spring.pag093.Rabbit">
+		<property name="description" value="That rascally rabbit!" />
+	</bean>
 	
 	
 </beans>
