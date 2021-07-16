@@ -2,14 +2,18 @@ package org.spring.config;
 
 import javax.sql.DataSource;
 
+import org.spring.interceptor.PerformanceInterceptor;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
@@ -17,8 +21,8 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 //APUNTES-@EnableWebMvc: This enables Spring's ability to receive and process web requests
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "org.spring.controller", "org.spring.service" })
-public class AppConfig {
+@ComponentScan(basePackages = { "org.spring.controller", "org.spring.service","org.spring.interceptor" })
+public class AppConfig extends WebMvcConfigurerAdapter{
 	@Bean(name = "theSource")
 	// To force to be executed each time it's called (and return a different object
 	// dataSource() each time), use the annotation with a scope @Scope prototype
@@ -54,6 +58,18 @@ public class AppConfig {
 	public ViewResolver tilesViewResolver() {
 		TilesViewResolver resolver = new TilesViewResolver();
 		return resolver;
+	}
+	
+	@Bean
+	public HandlerInterceptor performanceInterceptor() {
+		PerformanceInterceptor interceptor;
+		interceptor = new PerformanceInterceptor();
+		return interceptor;
+	}
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(performanceInterceptor()).addPathPatterns("/user/*");
 	}
 
 }
