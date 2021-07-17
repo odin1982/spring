@@ -1,5 +1,5 @@
 # avance
-	3.5.6 Making beans aware
+	3.6 Advising beans
 # spring
 
 ## BeanPostProcessor interface

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
 	<!-- autowire byName -->
 	<!-- <bean id="b" class="spring.tutorials.autowiring.byName._01.B"></bean> -->
@@ -120,6 +121,13 @@
 	
 	<bean id="bugs" class="spring.pag093.Rabbit">
 		<property name="description" value="That rascally rabbit!" />
+	</bean>
+	
+	<!-- Scripting beans -->
+	<bean id="lime" class="spring.pag107.lime"/>
+	
+	<bean id="coconut" class="spring.pag107.Coconut">
+		<property name="lime" ref="lime"></property>
 	</bean>
 	
 	
