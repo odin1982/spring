@@ -36,5 +36,10 @@ public class UserController {
 		return "user/add";//Ubicación de JSP
 	}
 	
+	@RequestMapping("/miltilanguage")
+	public String userMultilanguage() {
+		return "multilingual/multilingual";//Ubicación de JSP
+	}
+	
 	
 }
