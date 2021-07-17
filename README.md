@@ -1,13 +1,6 @@
 # avance
-	3.5 Working with Spring’s special beans
+	3.5.6 Making beans aware
 # spring
-## AUTOWIRING
-	- byType
-	- byName
-## BEAN SCOPING
-	-Singleton: Por default todos los bean son singleton
 
-# INJECTION METHOD
-- Constructor
-- Setters
-- Method Injection
+## BeanPostProcessor interface
+	The BeanPostProcessor interface gives you two opportunities to alter a 	bean after it has been created and wired.
