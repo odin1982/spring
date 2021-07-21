@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.LocaleResolver;
@@ -37,7 +38,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();// Se agrego dependencia spring jdbc
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/orderapi");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/pruebas");
 		dataSource.setUsername("root");
 		dataSource.setPassword("barcelona8");
 		return dataSource;
@@ -107,4 +108,10 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 //	public void addInterceptors(InterceptorRegistry registry) {
 //		registry.addInterceptor(localeChangeInterceptor());
 //	}
+	
+	
+	@Bean
+	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+		return new JdbcTemplate(dataSource);
+	}
 }
