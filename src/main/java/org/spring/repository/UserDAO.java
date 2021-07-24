@@ -1,5 +1,7 @@
 package org.spring.repository;
 
+import java.util.List;
+
 import org.spring.model.User;
 import org.spring.model.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +30,13 @@ public class UserDAO {
 	// ParameterizedBeanPropertyRowMapper class:
 	public User findById2(Long id) {
 		String sql = "select * from user where id=?";
-		User user = jdbcTemplate.queryForObject(sql, new Object[] { id },ParameterizedBeanPropertyRowMapper.newInstance(User.class));
+		User user = jdbcTemplate.queryForObject(sql, new Object[] { id }, ParameterizedBeanPropertyRowMapper.newInstance(User.class));
 		return user;
+	}
+
+	public List<User> findAll() {
+		String sql = "select * from user";
+		List<User> userList = jdbcTemplate.query(sql, ParameterizedBeanPropertyRowMapper.newInstance(User.class));
+		return userList;
 	}
 }
