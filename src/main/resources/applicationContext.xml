@@ -124,11 +124,38 @@
 	</bean>
 	
 	<!-- Scripting beans -->
-	<bean id="lime" class="spring.pag107.lime"/>
+<!-- 	<bean id="lime" class="spring.pag107.lime"/> -->
 	
-	<bean id="coconut" class="spring.pag107.Coconut">
-		<property name="lime" ref="lime"></property>
+<!-- 	<bean id="coconut" class="spring.pag107.Coconut"> -->
+<!-- 		<property name="lime" ref="lime"></property> -->
+<!-- 	</bean> -->
+	
+	<!-- Creating Advice -->
+<!-- 	<bean id="audience" class="spring.pag125.Audience"/> -->
+	
+<!-- 	<bean id="audienceAdvice" class="spring.pag128.AudienceAdvice"> -->
+<!-- 		<property name="audience" ref="audience"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="odin" class="spring.pag126.Instrumentalist"> -->
+<!-- 		<property name="song" value="Shaba daba daba"></property> -->
+<!-- 		<property name="instrument" ref="saxophone" /> -->
+<!-- 		<property name="audience" ref="audience" /> -->
+<!-- 	</bean> -->
+	<!-- Creating Advice -->
+	
+	<!-- Around advice using Test.java-->
+	<bean id="audience" class="spring.pag125.Audience"/>
+	
+	<bean id="audienceAdviceAroung" class="spring.pag131.AudienceAroundAdvice">
+		<property name="audience" ref="audience"></property>
 	</bean>
 	
+	<bean id="odin" class="spring.pag126.Instrumentalist">
+		<property name="song" value="Shaba daba daba"></property>
+		<property name="instrument" ref="saxophone" />
+		<property name="audience" ref="audience" />
+	</bean>
+	<!-- Around advice -->
 	
 </beans>
