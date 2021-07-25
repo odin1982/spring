@@ -3,6 +3,7 @@ package org.spring.controller;
 
 import java.util.logging.Logger;
 
+import org.spring.model.User;
 import org.spring.repository.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 	private static Logger log = Logger.getLogger(UserController.class.getName());
-	@Autowired private UserDAO userDAO;
+	@Autowired(required = true) 
+	private UserDAO userDAO;
 	
 	@RequestMapping("/list")
 	public String userList(Model model) {
@@ -47,10 +49,18 @@ public class UserController {
 	
 	@RequestMapping("/addUser")
 	public String addUser() {
+		User user = new User();
+		user.setAge(39);
+		user.setFirstName("odin");
+		log.info("Add User: " + user);
+		userDAO.add(user);
 		return "user/add";
 	}
 	
-	
-	
-	
+	@RequestMapping("/{id}")
+	public String findById(@PathVariable("id")Long userId) {
+		User user = userDAO.findById(userId);
+		log.info("User[ " +user.getId()+" ]"+ user);
+		return "user/add";
+	}
 }

@@ -29,7 +29,7 @@ import org.springframework.web.servlet.view.JstlView;
 //APUNTES-@EnableWebMvc: This enables Spring's ability to receive and process web requests
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "org.spring.controller", "org.spring.service", "org.spring.interceptor" })
+@ComponentScan(basePackages = { "org.spring.controller", "org.spring.service", "org.spring.interceptor","org.spring.repository" })
 public class AppConfig extends WebMvcConfigurerAdapter {
 	@Bean(name = "theSource")
 	// To force to be executed each time it's called (and return a different object
@@ -38,7 +38,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();// Se agrego dependencia spring jdbc
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/pruebas");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/pruebas?useSSL=false&serverTimezone=America/Mexico_City&allowPublicKeyRetrieval=true");
 		dataSource.setUsername("root");
 		dataSource.setPassword("barcelona8");
 		return dataSource;
