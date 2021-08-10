@@ -10,14 +10,12 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
 	<dependencies>
-		<!--Se agrega Spring Core 4 en Maven -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>4.3.30.RELEASE</version>
-			<scope>runtime</scope>
+			<version>3.2.9.RELEASE</version>
 		</dependency>
-
+		
 		<!-- junit 4 -->
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -27,7 +25,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Se garega mockito -->
+		<!-- Mockito -->
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
 		<dependency>
 			<groupId>org.mockito</groupId>
