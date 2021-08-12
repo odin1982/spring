@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- Bean declarations go here -->
+	<bean id="duke" class="spring.pag033.Juggler"></bean>
+	
+	<!-- Se usa el constructor para asignarle bean bags -->
+	<bean id="duke15beanbags" class="spring.pag033.Juggler">
+		<constructor-arg value="15"/>
+	</bean>
+	
+	<bean id="sonnet29" class="spring.pag033.Sonnet29"></bean>
+	<bean id="poeticDuke" class="spring.pag033.PoeticJuggler">
+		<constructor-arg value="30"/>
+		<constructor-arg ref="sonnet29"/>
+	</bean>
+</beans>
