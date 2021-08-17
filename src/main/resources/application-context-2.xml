@@ -16,4 +16,10 @@
 		<constructor-arg value="30"/>
 		<constructor-arg ref="sonnet29"/>
 	</bean>
+	
+	<!-- Se define un bean sin tener un constructor publico -->
+	<bean id="theStage" class="spring.pag037.Stage" factory-method="getInstance"/>
+	
+	<!-- Se define un bean con scope prototype -->
+	<bean id="ticket" class="spring.pag038.Ticket" scope="prototype"/>
 </beans>
