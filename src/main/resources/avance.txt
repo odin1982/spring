@@ -1,1 +1,1 @@
-CREATING BEANS THROUGH FACTORY METHODS
+2.2Injecting into bean properties
