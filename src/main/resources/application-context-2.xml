@@ -30,4 +30,43 @@
 		init-method="turnOnLights" destroy-method="turnOffLights"/>
 		
 	<bean id="auditoriumDefault" class="spring.pag040.AuditoriumDefaultMethodSample" />
+	
+	<!-- Injecting into bean properties -->
+	<bean id="kenny" class="spring.pag041.Instrumentalist"/>
+	
+	<bean id="kenny2" class="spring.pag041.Instrumentalist">
+		<property name="song" value="Curve"/>
+		<property name="age" value="39"/>
+	</bean>
+	
+	<bean id="saxophone" class="spring.pag041.Saxophone"/>
+	<bean id="piano" class="spring.pag041.Piano"/>
+	
+	<bean id="george" class="spring.pag041.Instrumentalist">
+		<property name="song" value="Curve"/>
+		<property name="age" value="20"></property>
+		<property name="instrument" ref="saxophone"/>
+	</bean>
+	
+	<bean id="francisco" class="spring.pag041.Instrumentalist">
+		<property name="song" 	value="Christmas Jingle Bell"/>
+		<property name="age"	value="21"/>
+		<property name="instrument" ref="piano"/>			
+	</bean>
+	
+	<!-- Inject inner beans -->
+	<bean id="guillermo" class="spring.pag041.Instrumentalist">
+		<property name="song" 	value="Guadalajara"/>
+		<property name="age"	value="22"/>
+		<property name="instrument">
+			<bean class="spring.pag041.Piano"/>
+		</property>			
+	</bean>
+	
+	<bean id="ochoa" class="spring.pag033.PoeticJuggler">
+		<constructor-arg value="23"/>
+		<constructor-arg>
+			<bean class="spring.pag033.Sonnet29"/>
+		</constructor-arg>
+	</bean>
 </beans>
