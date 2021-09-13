@@ -1,1 +1,1 @@
-2.2Injecting into bean properties
+Wiring beans page 30
