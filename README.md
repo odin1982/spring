@@ -41,4 +41,24 @@ ApplicationContextcontext = newFileSystemXmlApplicationContext("c:/foo.xml");
 6. Inicializar beans							Si el bean implementa "InitializingBean", se llamará a su método "afterPropertiesSet()". Si el bean tiene un método "init-method" 												propio (que veremos en la siguiente sección), el método será llamado.
 7. Post procesar (después de la inicialización)	Si hay algún "BeanPostProcessors", Spring llama a sus métodos "postProcessAfterInitialization()"
 8. El bean está listo para usarse				En este punto el bean está listo para ser usado por la aplicación y permanecerá en el bean factory hasta que deje de ser ocupado.
-9. Destruir el bean								Si el bean implementa "DisposableBean", se llama a su método "destroy()". Si el bean tiene un método "destroy-bean" propio, el 												 método	especificado será llamado.
+9. Destruir el bean								Si el bean implementa "DisposableBean", se llama a su método "destroy()". Si el bean tiene un método "destroy-bean" propio, el 												 												método	especificado será llamado.
+
+
+## Injectar beans sin constructor
+Se usa static method factory, un ejemplo de una clase sin constructor es un Singleton en el que se obtiene su referencia a traves de un metodo estático
+
+```
+<bean id="theStage" class="com.springinaction.springidol.Stage" factory-method="getInstance" />
+```
+
+# Bean Scoping
+Por default el scope de los beans es singleton.
+1. singleton: 		Distribuye la misma instancia del bean
+2. prototype: 		Produce una instancia de bean cada vez que la necesita
+3. request:			Su alcance es valido solo en un HTTP request(valido solo cuando estas usando Spring MVC)
+4. session:			Su alcance es valido solo en un HTTP session(valido solo cuando estas usando Spring MVC)
+5. global-session: 	Su alcance es valido solo en un HTTP global session(valido solo cuando estas usando Spring MVC)
+
+```
+<bean id="ticket" class="com.springinaction.springidol.Ticket"scope="prototype"/>
+``` 
