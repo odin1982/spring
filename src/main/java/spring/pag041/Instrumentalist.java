@@ -27,7 +27,7 @@ public class Instrumentalist implements Performer{
 	public void setSong(String song) {
 		this.song = song;
 	}
-
+	//Injecting by setter
 	public void setInstrument(Instrument instrument) {
 		this.instrument = instrument;
 	}
