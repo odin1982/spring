@@ -51,7 +51,7 @@ Se usa static method factory, un ejemplo de una clase sin constructor es un Sing
 <bean id="theStage" class="com.springinaction.springidol.Stage" factory-method="getInstance" />
 ```
 
-# Bean Scoping
+## Bean Scoping
 Por default el scope de los beans es singleton.
 1. singleton: 		Distribuye la misma instancia del bean
 2. prototype: 		Produce una instancia de bean cada vez que la necesita
@@ -61,4 +61,65 @@ Por default el scope de los beans es singleton.
 
 ```
 <bean id="ticket" class="com.springinaction.springidol.Ticket"scope="prototype"/>
-``` 
+```
+
+## init-method, destroy-method
+Se declaran dentro del tag de bean:  
+	**init-method**: 		Especifica un metodo que sera llamado despues de que se instancie el bean.  
+	**destroy-method**: 	Especifica un metodo que es llamado antes de que se removido del contenedor.
+	
+	```
+	public classAuditorium{
+		public void turnOnLights(){ ... }
+		public void turnOffLights(){ ... }
+	}
+	//Asi se declara en el context
+	<bean id="auditorium" class="com.springinaction.springidol.Auditorium" init-method="turnOnLights" destroy-method="turnOffLights"/>
+	```
+## default-init-method, default-destroy-method  
+Si necesitas que todos tus beans usen init-method y destroy-method se usan los metodos default:  
+	
+	```
+	<?xml version="1.0"encoding="UTF-8"?>
+		<beans xmlns="http://www.springframework.org/schema/beans"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+				default-init-method="turnOnLights"
+				default-destroy-method="turnOffLights">...
+	</beans>  
+	```  
+
+## Inyeccion con setters
+
+```
+<bean id="kenny2" class="com.springinaction.springidol.Instrumentalist">
+	<propertyname="song"value="JingleBells"/>
+	<propertyname="instrument"ref="saxophone"/>
+</bean>
+```
+## Injecting inner beans  
+Se usa cuando no quieres compartir el bean con otros beans.  
+
+```
+<bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
+	<property name="song"value="JingleBells"/>
+	<property name="instrument">
+		<bean class="org.springinaction.springidol.Saxophone"/>
+	</property>
+</bean>
+```
+
+##Wiring properties with Spring's "p" namespace
+El namespace p ofrece una manera mas facil de unir propiedades de un bean.
+Lo primero que se debe hacer es agregarlo en el application context
+
+```
+<?xml version="1.0"encoding="UTF-8"?>
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"  --> Se agrega
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+```
