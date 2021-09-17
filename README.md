@@ -123,3 +123,21 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 ```
+
+## Wiring collection  
+**<list>** 	useful when configuring Arrays or Collections, wiring a list of values, allowing duplicates  
+**<set>**  	useful when configuring Arrays or Collections, wiring a set of values, not allowing duplicates  
+**<map>**	wiring a collection of name-value pairs where name and value can be of any type  
+**<props>**	wiring a collection of name-value pairs where the name and value are both strings  
+
+```
+<bean id="hank" class="com.springinaction.springidol.OneManBand">
+	<propertyname="instruments">
+		<list>
+			<refbean="guitar"/>
+			<refbean="cymbal"/>
+			<refbean="harmonica"/>
+		</list>
+	</property>
+</bean>
+```
