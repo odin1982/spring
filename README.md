@@ -147,9 +147,9 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 <bean id="hank"class="com.springinaction.springidol.OneManBand">
 	<propertyname="instruments">
 		<map>
-			<entrykey="GUITAR"value-ref="guitar"/>
-			<entrykey="CYMBAL"value-ref="cymbal"/>
-			<entrykey="HARMONICA"value-ref="harmonica"/>
+			<entry key="GUITAR" value-ref="guitar"/>
+			<entry key="CYMBAL" value-ref="cymbal"/>
+			<entry key="HARMONICA" value-ref="harmonica"/>
 		</map>
 	</property>
 </bean>
@@ -162,6 +162,7 @@ value 														Specifies the value of the map entry as a String
 value-ref 													Specifies the value of the map entry as a reference to a bean in the Spring context
 
 ## Wiring Properties Collection
+
 ```
 <bean id="hank"class="com.springinaction.springidol.OneManBand">
 	<property name="instruments">
@@ -175,6 +176,27 @@ value-ref 													Specifies the value of the map entry as a reference to a 
 ```
 
 ## Wiring nothing(null)
+
 ```
-<propertyname="someNonNullProperty"><null/></property>
+<property name="someNonNullProperty"><null/></property>
+```
+
+
+## SPEL( Spring expression language)
+Spring 3 uses SPEL in order to wiring bean's properties, constructor arguments using expresions that ARE EVALUATED AT RUNTIME
+
+### Literal Values
+The #{} markers are a clue to Spring that the content that they contain is a SPEL expression.
+
+```
+<property name="message" value="The value is #{5}"/>
+<property name="name" value="#{'Chuck'}"/>
+<property name='name' value='#{"Chuck"}'/>
+<property name="enabled" value="#{false}"/>
+```
+### Referencing beans, properties and methods
+Another basic thing that a SPEL expression can do is to reference another bean by its ID
+
+```
+<property name="instrument" value="#{saxophone}"/>
 ```
