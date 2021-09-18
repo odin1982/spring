@@ -160,3 +160,16 @@ key 														Specifies the key of the map entry as a String
 key-ref 													Specifies the key of the map entry as a reference to a bean in the Spring context
 value 														Specifies the value of the map entry as a String
 value-ref 													Specifies the value of the map entry as a reference to a bean in the Spring context
+
+## Wiring Properties Collection
+```
+<bean id="hank"class="com.springinaction.springidol.OneManBand">
+	<property name="instruments">
+		<props>
+			<prop key="GUITAR">STRUMSTRUMSTRUM</prop>
+			<prop key="CYMBAL">CRASHCRASHCRASH</prop>
+			<prop key="HARMONICA">HUMHUMHUM</prop>
+		</props>
+	</property>
+</bean>
+```
