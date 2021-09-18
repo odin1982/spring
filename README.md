@@ -173,3 +173,8 @@ value-ref 													Specifies the value of the map entry as a reference to a 
 	</property>
 </bean>
 ```
+
+## Wiring nothing(null)
+```
+<propertyname="someNonNullProperty"><null/></property>
+```
