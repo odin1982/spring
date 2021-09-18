@@ -141,3 +141,22 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	</property>
 </bean>
 ```
+
+## Wiring map collection
+```
+<bean id="hank"class="com.springinaction.springidol.OneManBand">
+	<propertyname="instruments">
+		<map>
+			<entrykey="GUITAR"value-ref="guitar"/>
+			<entrykey="CYMBAL"value-ref="cymbal"/>
+			<entrykey="HARMONICA"value-ref="harmonica"/>
+		</map>
+	</property>
+</bean>
+```
+An <entry> in a <map> is made up of a key and a value, either of which can be a primitive value or a reference to another bean. These attributes help specify the keys and values of an <entry>.
+Attribute 													Purpose
+key 														Specifies the key of the map entry as a String
+key-ref 													Specifies the key of the map entry as a reference to a bean in the Spring context
+value 														Specifies the value of the map entry as a String
+value-ref 													Specifies the value of the map entry as a reference to a bean in the Spring context
