@@ -200,3 +200,8 @@ Another basic thing that a SPEL expression can do is to reference another bean b
 ```
 <property name="instrument" value="#{saxophone}"/>
 ```
+
+### Working with types
+The key to working with class-scoped methods and constants in SpEL is to use the T() operator. The result of the T() operator is a Class object that represents.
+
+The real value of the T() operator is that it gives us access to static methods and constants on a given class.
