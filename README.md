@@ -205,3 +205,11 @@ Another basic thing that a SPEL expression can do is to reference another bean b
 The key to working with class-scoped methods and constants in SpEL is to use the T() operator. The result of the T() operator is a Class object that represents.
 
 The real value of the T() operator is that it gives us access to static methods and constants on a given class.
+
+
+## The four kinds of autowiring
+* byName: 		Intenta hacer coincidir todas las propiedades del bean autowired con beans que tienen el mismo nombre (o ID) que las propiedades.
+* byName:  		Attempts to match all properties of the autowired bean with beans that have the same name (or ID) as the properties. Properties for which there’s no matching bean will 			remain unwired.
+* byType:		Attempts to match all properties of the autowired bean with beans whose types are assignable to the properties. Properties for which there’s no matching bean will 				remain unwired.
+* constructor: 	Tries to match up a constructor of the autowired bean with beans whose types are assignable to the constructor arguments.
+* autodetect:	Attempts to apply constructor autowiring first. If that fails,byType will be tried.
