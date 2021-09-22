@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util 
+  		http://www.springframework.org/schema/util/spring-util.xsd">
+  	
+<!-- 	<bean id="kenny2" class="spring.pag041.Instrumentalist"> -->
+<!-- 		<property name="song" value="Jingle Bells"/> -->
+<!-- 		<property name="instrument" ref="saxophone"/> -->
+<!-- 	</bean> -->
+	
+	
+	
+<!-- 	Autowire by type -->
+<!-- 	Automaticamente detecta que hay un bean de tipo Instrument que es Saxophone y lo inyecta  -->
+<!--   	<bean id="instrument" class="spring.pag041.Saxophone"/> -->
+<!-- 	<bean id="kenny3" class="spring.pag041.Instrumentalist" autowire="byType"> -->
+<!-- 		<property name="song" value="Jingle Bells"/> -->
+<!-- 	</bean> -->
+
+
+	<!-- Autowire by type -->
+	<!-- Que pasa si hay dos bean del mismo tipo: manda una exception en la que hay dos tipos que puede escoger y no sabe cual reconocer -->
+<!-- 	<bean id="saxophone" class="spring.pag041.Saxophone"/> -->
+<!--   	<bean id="instrument" class="spring.pag041.Saxophone"/> -->
+<!-- 	<bean id="kenny3" class="spring.pag041.Instrumentalist" autowire="byType"> -->
+<!-- 		<property name="song" value="Jingle Bells"/> -->
+<!-- 	</bean> -->
+
+<!-- Solucion cuando hay dos beans del mismo tipo -->
+<!-- 		<bean id="saxophone" class="spring.pag041.Saxophone" primary="true"/> -->
+<!--   		<bean id="instrument" class="spring.pag041.Saxophone"/> -->
+<!-- 		<bean id="kenny3" class="spring.pag041.Instrumentalist" autowire="byType"> -->
+<!-- 			<property name="song" value="Jingle Bells"/> -->
+<!-- 		</bean> -->
+		
+</beans>
