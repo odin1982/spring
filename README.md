@@ -208,8 +208,14 @@ The real value of the T() operator is that it gives us access to static methods 
 
 
 ## The four kinds of autowiring
-* byName: 		Intenta hacer coincidir todas las propiedades del bean autowired con beans que tienen el mismo nombre (o ID) que las propiedades.
 * byName:  		Attempts to match all properties of the autowired bean with beans that have the same name (or ID) as the properties. Properties for which there’s no matching bean will 			remain unwired.
-* byType:		Attempts to match all properties of the autowired bean with beans whose types are assignable to the properties. Properties for which there’s no matching bean will 				remain unwired.
+
+* byType:		
+Attempts to match all properties of the autowired bean with beans whose types are assignable to the properties. Properties for which there’s no matching bean will remain unwired.
+
+In Spring, “Autowiring by Type” means, if data type of a bean is compatible with the data type of other bean property, auto wire it.
+
+
 * constructor: 	Tries to match up a constructor of the autowired bean with beans whose types are assignable to the constructor arguments.
+
 * autodetect:	Attempts to apply constructor autowiring first. If that fails,byType will be tried.
