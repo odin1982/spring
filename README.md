@@ -218,4 +218,18 @@ In Spring, “Autowiring by Type” means, if data type of a bean is compatible with
 
 * constructor: 	Tries to match up a constructor of the autowired bean with beans whose types are assignable to the constructor arguments.
 
-* autodetect:	Attempts to apply constructor autowiring first. If that fails,byType will be tried.
+* autodetect:	
+Attempts to apply constructor autowiring first. If that fails,byType will be tried.  
+
+## Default Autowiring
+Si necesitas que todos tus componentes realicen el autowiring de una forma
+
+```
+<?xml version="1.0"encoding="UTF-8"?>
+	<beans 	xmlns="http://www.springframework.org/schema/beans"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+			default-autowire="byType">
+</beans>
+```
