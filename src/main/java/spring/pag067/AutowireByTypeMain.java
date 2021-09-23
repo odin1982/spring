@@ -9,7 +9,10 @@ public class AutowireByTypeMain {
 	public static void main(String[] args) throws PerformanceException {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("appcontext-autowiring-bytype.xml");
 		
-		Performer kenny3 = (Performer)context.getBean("kenny3");
-		kenny3.perform();
+//		Performer kenny3 = (Performer)context.getBean("kenny3");
+//		kenny3.perform();
+	
+		Person person = (Person)context.getBean("person");
+		System.out.println(person);
 	}
 }

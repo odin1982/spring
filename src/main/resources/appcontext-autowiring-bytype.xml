@@ -37,5 +37,21 @@
 <!-- 		<bean id="kenny3" class="spring.pag041.Instrumentalist" autowire="byType"> -->
 <!-- 			<property name="song" value="Jingle Bells"/> -->
 <!-- 		</bean> -->
+
+<!-- Injecting by setter -->
+<!-- <bean id="person" class="spring.pag067.Person"> -->
+<!-- 	<property name="ability" ref="invisible"/> -->
+<!-- </bean> -->
+
+<!-- <bean id="invisible" class="spring.pag067.Ability"> -->
+<!-- 	<property name="skill" value="invisible"/> -->
+<!-- </bean> -->
+
+<!-- Autowiring byType -->
+<bean id="person" class="spring.pag067.Person" autowire="byType" />
+<bean id="invisible" class="spring.pag067.Ability">
+	<property name="skill" value="invisible"></property>
+</bean>
+
 		
 </beans>
