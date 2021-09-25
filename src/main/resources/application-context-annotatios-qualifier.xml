@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<beans 	xmlns="http://www.springframework.org/schema/beans"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:context="http://www.springframework.org/schema/context"
+			xsi:schemaLocation="http://www.springframework.org/schema/beans
+								http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+								http://www.springframework.org/schema/context
+								http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Le indicamos que vamos a usar anotaciones en nuetsro codigo -->
+	<context:annotation-config/>
+	
+	<bean id="profile" class="spring.pag071.autowiring.qualifier.Profile"></bean>
+	<bean id="student1" class="spring.pag071.autowiring.qualifier.Student">
+		<property name="age" value="39"/>
+		<property name="name" value="Odin"/>
+	</bean>
+	
+	<bean id="student2" class="spring.pag071.autowiring.qualifier.Student">
+		<property name="age" value="30"/>
+		<property name="name" value="Sarai"/>
+	</bean>
+	
+	
+	<bean id="barcelona" class="spring.pag071.autowiring.qualifier.Barcelona"/>
+	<bean id="america" class="spring.pag071.autowiring.qualifier.America"/>
+	
+	<bean id="messi" class="spring.pag071.autowiring.qualifier.Player">
+		<property name="name" value="property"/>
+	</bean>
+	
+</beans>
