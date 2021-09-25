@@ -244,3 +244,10 @@ En el application context necesitas agregar este tag
 
 ## @Qualifier
 Es usada para resolver conflictos de autowiring, cuando hay multiples beans del mismo tipo
+
+
+## @Inject
+Just like @Autowired, @Inject can be used to autowire properties, methods, and constructors. Unlike @Autowired, @Inject doesn't have a required attribute. Therefore, @Inject-annotated dependencies are expected to be fullfilled,failing with an exception if they're not.
+
+## @Named
+Tiene la misma funcion que @Qualifier pero se usa con @Inject

@@ -15,7 +15,7 @@
 			<artifactId>spring-context</artifactId>
 			<version>3.2.9.RELEASE</version>
 		</dependency>
-		
+
 		<!-- junit 4 -->
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -32,6 +32,12 @@
 			<artifactId>mockito-all</artifactId>
 			<version>1.10.19</version>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
 		</dependency>
 
 	</dependencies>
