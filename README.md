@@ -233,3 +233,14 @@ Si necesitas que todos tus componentes realicen el autowiring de una forma
 			default-autowire="byType">
 </beans>
 ```
+
+## Autowiring with Annotations
+
+En el application context necesitas agregar este tag
+
+```
+<context:annotation-config/>
+```
+
+## @Qualifier
+Es usada para resolver conflictos de autowiring, cuando hay multiples beans del mismo tipo
