@@ -234,9 +234,11 @@ Si necesitas que todos tus componentes realicen el autowiring de una forma
 </beans>
 ```
 
-## Autowiring with Annotations
+## Autowiring with Annotations <context:annotation-config/>
 
-En el application context necesitas agregar este tag
+En el application context necesitas agregar este tag, permite anotaciones en tus clases Java para hacer Wiring o Autowired
+
+Cuando tu agregas a tu archivo de configuracion este tag tu e estas diciendo a Spring que tu vas a usar anotaciones en los beans que hayas declarado
 
 ```
 <context:annotation-config/>
@@ -251,3 +253,29 @@ Just like @Autowired, @Inject can be used to autowire properties, methods, and c
 
 ## @Named
 Tiene la misma funcion que @Qualifier pero se usa con @Inject
+
+## Automatically discovering beans <context:component-scan>
+Hace lo mismo que <context:annotation-config/> pero tiene un plus configura Spring para que automaticamente descubra los beans que has declarado, con esto dejamos de usar el tag <bean>, tu declaras el paquete y va a scanar desde ese paquete hasta sus subpaquetes
+
+```
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+							http://www.springframework.org/schema/context
+							http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+		<context:component-scan base package="com.springinaction.springidol"></context:component-scan>
+</beans>
+```
+
+## Stereotypes Annotation
+Como <context:component-scan> sabe que clases registrar como Spring beans?
+<context:component-scan> busca clases que estan anotadas con anotaciones estereotipo  
+
+* @Component:	Tiene un proposito general indicando que la clase es un componente de Spring
+* @Controller: 	Indica que la clase define un Spring MVC Controller.
+* @Repository:	Indica que la clase define u data repository.
+* @Service:		Indica que a clase define un servicio.
+
