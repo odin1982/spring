@@ -37,15 +37,15 @@ ApplicationContextcontext = newFileSystemXmlApplicationContext("c:/foo.xml");
 2. Llenar Propiedades							Spring inyecta las propiedades del bean
 3. Establecer el nombre del bean				Si el bean implementa "BeanNameAware",Spring pasa el id del bean a "setBeanName()"
 4. Establecer el bean factory					Si el bean implementa "BeanFactoryAware", Spring pasa el bean factory a "setBeanFactory()"
-5. Post procesar (antes de la inicialización)	Si hay algún "BeanPostProcessors", Spring llama a sus métodos "postProcessBeforeInitialization()"
-6. Inicializar beans							Si el bean implementa "InitializingBean", se llamará a su método "afterPropertiesSet()". Si el bean tiene un método "init-method" 												propio (que veremos en la siguiente sección), el método será llamado.
-7. Post procesar (después de la inicialización)	Si hay algún "BeanPostProcessors", Spring llama a sus métodos "postProcessAfterInitialization()"
-8. El bean está listo para usarse				En este punto el bean está listo para ser usado por la aplicación y permanecerá en el bean factory hasta que deje de ser ocupado.
-9. Destruir el bean								Si el bean implementa "DisposableBean", se llama a su método "destroy()". Si el bean tiene un método "destroy-bean" propio, el 												 												método	especificado será llamado.
+5. Post procesar (antes de la inicializaciï¿½n)	Si hay algï¿½n "BeanPostProcessors", Spring llama a sus mï¿½todos "postProcessBeforeInitialization()"
+6. Inicializar beans							Si el bean implementa "InitializingBean", se llamarï¿½ a su mï¿½todo "afterPropertiesSet()". Si el bean tiene un mï¿½todo "init-method" 												propio (que veremos en la siguiente secciï¿½n), el mï¿½todo serï¿½ llamado.
+7. Post procesar (despuï¿½s de la inicializaciï¿½n)	Si hay algï¿½n "BeanPostProcessors", Spring llama a sus mï¿½todos "postProcessAfterInitialization()"
+8. El bean estï¿½ listo para usarse				En este punto el bean estï¿½ listo para ser usado por la aplicaciï¿½n y permanecerï¿½ en el bean factory hasta que deje de ser ocupado.
+9. Destruir el bean								Si el bean implementa "DisposableBean", se llama a su mï¿½todo "destroy()". Si el bean tiene un mï¿½todo "destroy-bean" propio, el 												 												mï¿½todo	especificado serï¿½ llamado.
 
 
 ## Injectar beans sin constructor
-Se usa static method factory, un ejemplo de una clase sin constructor es un Singleton en el que se obtiene su referencia a traves de un metodo estático
+Se usa static method factory, un ejemplo de una clase sin constructor es un Singleton en el que se obtiene su referencia a traves de un metodo estï¿½tico
 
 ```
 <bean id="theStage" class="com.springinaction.springidol.Stage" factory-method="getInstance" />
@@ -208,12 +208,12 @@ The real value of the T() operator is that it gives us access to static methods 
 
 
 ## The four kinds of autowiring
-* byName:  		Attempts to match all properties of the autowired bean with beans that have the same name (or ID) as the properties. Properties for which there’s no matching bean will 			remain unwired.
+* byName:  		Attempts to match all properties of the autowired bean with beans that have the same name (or ID) as the properties. Properties for which thereï¿½s no matching bean will 			remain unwired.
 
 * byType:		
-Attempts to match all properties of the autowired bean with beans whose types are assignable to the properties. Properties for which there’s no matching bean will remain unwired.
+Attempts to match all properties of the autowired bean with beans whose types are assignable to the properties. Properties for which thereï¿½s no matching bean will remain unwired.
 
-In Spring, “Autowiring by Type” means, if data type of a bean is compatible with the data type of other bean property, auto wire it.
+In Spring, ï¿½Autowiring by Typeï¿½ means, if data type of a bean is compatible with the data type of other bean property, auto wire it.
 
 
 * constructor: 	Tries to match up a constructor of the autowired bean with beans whose types are assignable to the constructor arguments.
@@ -278,4 +278,23 @@ Como <context:component-scan> sabe que clases registrar como Spring beans?
 * @Controller: 	Indica que la clase define un Spring MVC Controller.
 * @Repository:	Indica que la clase define u data repository.
 * @Service:		Indica que a clase define un servicio.
+
+
+# AOP
+## Advice
+	The job of an aspect is an advice
+### Kind of advice
+	* Before = 	The advice functionality takes place before the advised method is
+				invoked.
+	* After =	The advice functionality takes place after the advised method completes,
+				regardless of the outcome.
+	* After-returning = The advice functionality takes place after the advised method
+				successfully completes.
+	* After-throwing = The advice functionality takes place after the advised method
+				throws an exception.
+	* Around = The advice wraps the advised method, providing some functionality
+				before and after the advised method is invoked.
+
+
+
 
